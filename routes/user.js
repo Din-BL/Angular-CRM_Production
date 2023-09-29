@@ -44,7 +44,7 @@ router.post("/login", userValidate, async (req, res) => {
   }
 });
 
-router.get("/", userAuthenticate, async (req, res) => {
+router.get("/user", userAuthenticate, async (req, res) => {
   try {
     const userDetails = await User.findOne({ email: req.user.sub });
     if (!userDetails) return res.status(404).send("User doest exist");
