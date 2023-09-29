@@ -12,6 +12,7 @@ module.exports.userValidate = (req, res, next) => {
 
 module.exports.userAuthenticate = (req, res, next) => {
   const authHeader = req.headers["authorization"];
+  console.log(authHeader);
   if (!authHeader) return res.sendStatus(401);
   jwt.verify(authHeader, config.get("ACCESS_TOKEN_SECRET"), (err, user) => {
     if (err) return res.sendStatus(403);

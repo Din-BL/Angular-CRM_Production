@@ -10,7 +10,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({ origin: '*' }));
-app.use("", user);
+app.use("/user", user);
 app.use("/customers", customer);
 app.use("/employees", employee);
 
