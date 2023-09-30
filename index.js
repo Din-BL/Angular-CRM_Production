@@ -6,7 +6,7 @@ const user = require("./routes/user");
 const customer = require("./routes/customer");
 const employee = require("./routes/employee");
 const path = require('path');
-const port = process.env.PORT || 4200;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({ origin: '*' }))
