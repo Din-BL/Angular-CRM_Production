@@ -2,8 +2,7 @@
   "name": "node.js-project",
   "version": "1.0.0",
   "engines": {
-    "node": "20.8.0",
-    "npm": "10.1.0"
+    "node": "20.8.0"
   },
   "description": "Final Project Of Node.js",
   "main": "index.js",
