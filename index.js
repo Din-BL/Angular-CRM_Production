@@ -9,8 +9,8 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(cors({ origin: '*' }));
-app.use("/", user);
+app.use(cors({ origin: '*' }))
+app.use("", user);
 app.use("/customers", customer);
 app.use("/employees", employee);
 
@@ -23,12 +23,5 @@ app.get('/*', (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
-
-
-
-
-
-
 
 
