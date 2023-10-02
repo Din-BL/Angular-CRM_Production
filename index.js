@@ -10,11 +10,10 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(cors({ origin: '*' }))
+app.use(express.static(path.join(__dirname, 'dist/test-project')));
 app.use("", user);
 app.use("/customers", customer);
 app.use("/employees", employee);
-
-app.use(express.static(path.join(__dirname, 'dist/test-project/')));
 
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/test-project', 'index.html'));
