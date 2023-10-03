@@ -17,7 +17,7 @@ router.post("/init", (req, res) => {
                 await Employee.deleteMany({});
                 const employeeData = JSON.parse(data);
                 await Employee.insertMany(employeeData.employees);
-                res.status(200).json('Inserted employees')
+                res.status(200).send(employeeData.employees)
             }
         });
     } catch (error) {
@@ -31,7 +31,7 @@ router.get("", userAuthenticate, async (req, res) => {
         if (!userInfo) return res.status(404).send("User doesn't exist");
         const findEmployees = await Employee.find({});
         if (!findEmployees) return res.status(404).send("User has no registered employees");
-        res.status(200).json(findEmployees);
+        res.status(200).send(findEmployees);
     } catch (error) {
         res.status(400).send(error.message);
     }

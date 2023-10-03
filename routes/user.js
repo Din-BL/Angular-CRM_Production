@@ -48,7 +48,7 @@ router.get("/", userAuthenticate, async (req, res) => {
   try {
     const userDetails = await User.findOne({ email: req.user.sub });
     if (!userDetails) return res.status(404).send("User doesn't exist");
-    res.status(200).json(_.pick(userDetails, ["_id", "username", "email"]));
+    res.status(200).send(_.pick(userDetails, ["_id", "username", "email"]));
   } catch (error) {
     res.status(400).send(error.message);
   }
