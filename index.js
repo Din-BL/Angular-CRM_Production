@@ -10,8 +10,8 @@ const path = require('path');
 const port = process.env.PORT || 3000;
 
 app.use(express.static(path.join(__dirname, 'dist/test-project')));
-app.use(morgan('tiny'))
 app.use(express.json());
+app.use(morgan('tiny'))
 app.use(cors({ origin: '*' }))
 app.use("/user_api", user);
 app.use("/customers_api", customer);
