@@ -11,7 +11,6 @@ const jwt = require("jsonwebtoken");
 
 // Endpoints
 
-
 router.post("/register", userValidate, async (req, res) => {
   try {
     const user = await User.create(req.body);
