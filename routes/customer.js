@@ -59,7 +59,7 @@ router.delete("/:id", userAuthenticate, async (req, res) => {
   try {
     const deleteCustomer = await Customer.findByIdAndDelete(req.params.id);
     if (!deleteCustomer) return res.status(404).send("Customer doesn't exist");
-    res.status(200)
+    res.status(200).send(deleteCustomer);
   } catch (error) {
     res.status(400).send(error.message);
   }
